@@ -4,13 +4,13 @@ import * as React from 'react';
 // import {observer} from 'mobx-react';
 // import DevTools from 'mobx-react-devtools';
 
-import {IAppStoreProps} from '../stores/appStore'
+import { IAppStoreProps } from '../stores/appStore'
 
-export interface IHeaderProps  extends IAppStoreProps {
+export interface IHeaderProps extends IAppStoreProps {
 
 }
 
-interface IHeaderState{
+interface IHeaderState {
 
 }
 
@@ -19,7 +19,10 @@ interface IHeaderState{
 export class Header extends React.Component<IHeaderProps, IHeaderState> {
     public render() {
         return (
-            <header>Aeonium</header>
+            <div>
+                <img src={require('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'}aeonium-logo'} />
+                <header>Aeonium</header>
+            </div>
         );
      }
 };

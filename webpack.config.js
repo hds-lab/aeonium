@@ -18,7 +18,10 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.tsx?$/,
-      loaders: ['awesome-typescript-loader'],
+      test: /.*\.(gif|png|jpe?g|svg)$/i,
+      loaders: ['awesome-typescript-loader', 
+      'file?hash=sha512&digest=hex&name=[hash].[ext]',
+      'image-webpack'],
       include: path.join(__dirname, 'src')
     }]
   }
