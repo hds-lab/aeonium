@@ -481,7 +481,7 @@ declare module "semantic-ui-react" {
         attached?: boolean | 'bottom',
         children?: React.ReactNode,
         className?: string,
-        color?: SemanticColor,
+        color?: SemanticCOLORS,
         compact?: boolean,
         content?: string,
         floating?: boolean,
@@ -539,129 +539,193 @@ declare module "semantic-ui-react" {
 
     class Checkbox extends React.Component<CheckboxProps, void> { }
 
-    interface DropDownItem {
-        /** Style as the currently chosen item. */
-        active?: boolean,
-        /** Primary content. */
-        children?: React.ReactNode,
-        /** Additional classes. */
-        className?: string,
-        /** Additional text with less emphasis. */
-        description?: string | React.ReactNode, // TODO check type
-        /** A dropdown item can be disabled. */
-        disabled?: boolean,
-        /** Add an icon to the item. */
-        icon?: string,
-        /**
-         * The item currently selected by keyboard shortcut.
-         * This is not the active item.
-         */
-        selected?: boolean,
-        /** Display text. */
-        text?: React.ReactNode | string, // TODO: check type
-        /** Stored value */
-        value?: number | string,
-    }
+    type DropdownPropPointing = 'left' | 'right' | 'top' | 'top left' | 'top right' | 'bottom' | 'bottom left' | 'bottom right'
+    type DropdownPropAdditionPosition = 'top' | 'bottom';
 
-    interface NameValue<T> {
-        name: string,
-        value: T
-    }
+    interface DropdownProps extends ReactMouseEvents<HTMLElement>, ReactFocusEvents<HTMLElement>, ReactFormEvents<HTMLElement> {
 
-    interface DropdownProps extends GenericProps {
-
-        // ------------------------------------
-        // Behavior
-        // ------------------------------------
-        /** Add an icon by name or as a component. */
-        icon?: string | React.ReactNode,
-        /** Array of Dropdown.Item props e.g. `{ text: '', value: '' }` */
-        options?: [DropDownItem],
-        /** Controls whether or not the dropdown menu is displayed. */
-        open?: boolean,
-        /** Initial value of open. */
-        defaultOpen?: boolean,
-        /** Primary content. */
-        children?: React.ReactNode, // TODO: check type
-        /** Current value or value array if multiple. Creates a controlled component. */
-        value?: string | number | [string] | [number], // TODO: mixed array?
-        /** Initial value or value array if multiple. */
-        defaultValue?: string | number | [string] | [number],
-        /** Placeholder text. */
-        placeholder?: string,
-        /** Name of the hidden input which holds the value. */
-        name?: string,
-        /** Custom element to trigger the menu to become visible. Takes place of 'text'. */
-        trigger?: React.ReactNode,
+        /** Label prefixed to an option added by a user. */
+        additionLabel?: string;
+        /** Position of the `Add: ...` option in the dropdown list ('top' or 'bottom'). */
+        additionPosition?: DropdownPropAdditionPosition;
         /**
          * Allow user additions to the list of options (boolean).
          * Requires the use of `selection`, `options` and `search`.
          */
-        allowAdditions?: boolean,
-        // TODO: add additionPosition
-        /** Label prefixed to an option added by a user. */
-        additionLabel?: string,
-        /** Message to display when there are no results. */
-        noResultsMessage?: string,
-        /** Define whether the highlighted item should be selected on blur. */
-        selectOnBlur?: boolean,
-        /** Make the dropdown options searchable by substring matching (default) or with a custom search function. */
-        search?: boolean | (() => any), // check callback
-
-        // ------------------------------------
-        // Callbacks
-        // ------------------------------------
-
-        /** Called with the name and new value added by the user. Use this to update the options list. */
-        onAddItem?: (name: string, value: string) => any,
-        /** Called with the React Synthetic Event on Dropdown blur. */
-        onBlur?: React.FocusEventHandler<React.ReactHTMLElement<HTMLInputElement>>,
-        /** Called with the React Synthetic Event and { name, value } on change. */
-        onChange?: ((event: React.FormEvent<React.ReactHTMLElement<HTMLInputElement>>, data: NameValue<string>) => any),
-        /** Called with the React Synthetic Event and current value on search input change. */
-        onSearchChange?: ((event: React.FormEvent<React.ReactHTMLElement<HTMLInputElement>>, value: string) => any),
-        /** Called with the React Synthetic Event on Dropdown focus. */
-        onFocus?: React.FocusEventHandler<React.ReactHTMLElement<HTMLInputElement>>,
-        /** Called with the React Synthetic Event on Dropdown mouse down. */
-        onMouseDown?: React.MouseEventHandler<React.ReactHTMLElement<HTMLInputElement>>,
-
-        // ------------------------------------
-        // Style
-        // ------------------------------------
-
+        allowAdditions?: any;
+        /** An element type to render as (string or function). */
+        as?: any;
         /** A Dropdown can reduce its complexity */
-        basic?: boolean,
+        basic?: boolean;
         /** Format the Dropdown to appear as a button. */
-        button?: boolean,
+        button?: boolean;
+        /** Primary content. */
+        children?: React.ReactNode;
         /** Additional classes. */
-        className?: string,
-        /** Format the dropdown to only take up as much width as needed. */
-        compact?: boolean,
-        /** Format the dropdown to only take up as much width as possible. */
-        fluid?: boolean,
-        /** Display the menu as detached from the Dropdown. */
-        floating?: boolean,
+        className?: string;
+        /** A compact dropdown has no minimum width. */
+        compact?: boolean;
+        /** Initial value of open. */
+        defaultOpen?: boolean;
+        /** Currently selected label in multi-select. */
+        defaultSelectedLabel?: any;
+        /** Initial value or value array if multiple. */
+        defaultValue?: string | number | Array<string> | Array<number>;
+        /** A disabled dropdown menu or item does not allow user interaction. */
+        disabled?: boolean;
+        /** An errored dropdown can alert a user to a problem. */
+        error?: boolean;
+        /** A dropdown menu can contain floated content. */
+        floating?: boolean;
+        /** A dropdown can take the full width of its parent */
+        fluid?: boolean;
         /** A dropdown menu can contain a header. */
-        header?: React.ReactNode,
-        inline?: boolean,
-        labeled?: boolean,
-        // TODO: add linkItem
-        /** Allow selecting multiple options. */
-        multiple?: boolean,
-        // TODO: add pointing
+        header?: React.ReactNode;
+        /** Shorthand for Icon. */
+        icon?: any;
+        /** A dropdown can be formatted to appear inline in other content. */
+        inline?: boolean;
+        /** A dropdown can be formatted as a menu item. */
+        item?: boolean;
+        /** A dropdown can be labeled. */
+        labeled?: boolean;
+        /** A dropdown can show that it is currently loading data. */
+        loading?: boolean;
+        /** A selection dropdown can allow multiple selections. */
+        multiple?: boolean;
+        /** Name of the hidden input which holds the value. */
+        name?: string;
+        /** Message to display when there are no results. */
+        noResultsMessage?: string;
+        /**
+         * Called when a user adds a new item. Use this to update the options list.
+         *
+         * @param {SyntheticEvent} event - React's original SyntheticEvent.
+         * @param {object} data - All props and the new item's value.
+         */
+        onAddItem?: React.MouseEventHandler<HTMLSelectElement>;
+        /**
+         * Called on search input change.
+         *
+         * @param {SyntheticEvent} event - React's original SyntheticEvent.
+         * @param {string} value - Current value of search input.
+         */
+        onSearchChange?: React.FormEventHandler<HTMLSelectElement>;
+        /** Controls whether or not the dropdown menu is displayed. */
+        open?: boolean;
+        /** Array of Dropdown.Item props e.g. `{ text: '', value: '' }` */
+        options?: Array<DropdownItemProps>;
+        /** Placeholder text. */
+        placeholder?: string;
+        /** A dropdown can be formatted so that its menu is pointing. */
+        pointing?: boolean | DropdownPropPointing;
+        /**
+         * A function that takes (data, index, defaultLabelProps) and returns
+         * shorthand for Label .
+         */
+        renderLabel?: any;
+        /** A dropdown can have its menu scroll. */
+        scrolling?: boolean;
+        /**
+         * A selection dropdown can allow a user to search through a large list of choices.
+         * Pass a function here to replace the default search.
+         */
+        search?: ((filteredOptions: any, searchQuery: any) => void) | boolean; // TODO -add search function;
+        /** Define whether the highlighted item should be selected on blur. */
+        selectOnBlur?: boolean;
+        /** A dropdown can be used to select between choices in a form. */
+        selection?: any;
+        /** A simple dropdown can open without Javascript. */
+        simple?: boolean;
+        /** A dropdown can receive focus. */
+        tabIndex?: string;
         /** The text displayed in the dropdown, usually for the active item. */
-        text?: string,
-        /** Behave as an html select. */
-        selection?: boolean,
-        simple?: boolean,
-        loading?: boolean,
-        error?: boolean,
-        disabled?: boolean,
-        scrolling?: boolean,
-
+        text?: string | React.ReactNode;
+        /** Custom element to trigger the menu to become visible. Takes place of 'text'. */
+        trigger?: any;
+        /** Current value or value array if multiple. Creates a controlled component. */
+        value?: string | number | Array<string> | Array<number>;
     }
 
-    class Dropdown extends React.Component<DropdownProps, void> { }
+    interface DropdownClass extends React.ComponentClass<DropdownProps> {
+        Divider: typeof DropdownDivider;
+        Header: typeof DropdownHeader;
+        Item: typeof DropdownItem;
+        Menu: typeof DropdownMenu;
+    }
+
+    const Dropdown: DropdownClass;
+
+    interface DropdownDividerProps {
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Additional classes. */
+        className?: string;
+    }
+
+    const DropdownDivider: React.ComponentClass<DropdownDividerProps>;
+
+    interface DropdownHeaderProps {
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** Shorthand for primary content. */
+        content?: any;
+        /** Shorthand for Icon. */
+        icon?: any;
+    }
+
+    const DropdownHeader: React.ComponentClass<DropdownHeaderProps>;
+
+    interface DropdownItemProps extends ReactMouseEvents<HTMLElement>, ReactFocusEvents<HTMLElement>, ReactFormEvents<HTMLElement> {
+        /** Style as the currently chosen item. */
+        active?: boolean;
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** Additional text with less emphasis. */
+        description?: any;
+        /** A dropdown item can be disabled. */
+        disabled?: boolean;
+        /** Shorthand for Flag. */
+        flag?: any;
+        /** Shorthand for Icon. */
+        icon?: any;
+        /** Shorthand for Image. */
+        image?: any;
+        /** Shorthand for Label. */
+        label?: any;
+        /**
+         * The item currently selected by keyboard shortcut.
+         * This is not the active item.
+         */
+        selected?: boolean;
+        /** Display text. */
+        text?: any;
+        /** Stored value */
+        value?: number | string;
+    }
+
+    const DropdownItem: React.ComponentClass<DropdownItemProps>;
+
+    interface DropdownMenuProps {
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** A dropdown menu can scroll. */
+        scrolling?: boolean;
+    }
+
+    const DropdownMenu: React.ComponentClass<DropdownMenuProps>;
 
     /*
     class Radio {
