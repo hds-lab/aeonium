@@ -13,7 +13,7 @@ interface IFooterState {
 export class Footer extends React.Component<IFooterProps, IFooterState> {
     public render() {
         return (
-            <header>Footer</header>
+            <header>Aeonium Footer</header>
         );
     }
 };

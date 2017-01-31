@@ -16,7 +16,7 @@ export class App extends React.Component<void, void> {
     render() {
         return (
             <div>
-              <Header store={storeInstance} />
+                <Header store={storeInstance} />
                 <Content store={storeInstance} />
                 <Footer store={storeInstance} />
             </div>

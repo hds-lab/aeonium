@@ -5,12 +5,74 @@ declare module "semantic-ui-react" {
 
     type InputType = 'color' | 'date' | 'datetime' | 'datetime-local' | 'email' | 'number' | 'range' | 'search' | 'select' | 'password' | 'tel' | 'text' | 'time' | 'url' | 'week'
 
-    type SemanticColor = 'red' | 'orange' | 'yellow' | 'olive' | 'green' | 'teal' | 'blue' | 'violet' | 'purple' | 'pink' | 'brown' | 'grey' | 'black'
-    type SemanticRotation = 'clockwise' | 'counterclockwise'
-    type SemanticFloatDirection = 'left' | 'right'
-    type SemanticSize = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive'
-    type SemanticTextAlignment = 'left' | 'center' | 'right' | 'justified'
-    type SemanticCountry = 'ad' | 'andorra' | 'ae' | 'united arab emirates' | 'uae' | 'af' | 'afghanistan' | 'ag' | 'antigua' | 'ai' | 'anguilla' | 'al' | 'albania' | 'am' | 'armenia' | 'an' | 'netherlands antilles' | 'ao' | 'angola' | 'ar' | 'argentina' | 'as' | 'american samoa' | 'at' | 'austria' | 'au' | 'australia' | 'aw' | 'aruba' | 'ax' | 'aland islands' | 'az' | 'azerbaijan' | 'ba' | 'bosnia' | 'bb' | 'barbados' | 'bd' | 'bangladesh' | 'be' | 'belgium' | 'bf' | 'burkina faso' | 'bg' | 'bulgaria' | 'bh' | 'bahrain' | 'bi' | 'burundi' | 'bj' | 'benin' | 'bm' | 'bermuda' | 'bn' | 'brunei' | 'bo' | 'bolivia' | 'br' | 'brazil' | 'bs' | 'bahamas' | 'bt' | 'bhutan' | 'bv' | 'bouvet island' | 'bw' | 'botswana' | 'by' | 'belarus' | 'bz' | 'belize' | 'ca' | 'canada' | 'cc' | 'cocos islands' | 'cd' | 'congo' | 'cf' | 'central african republic' | 'cg' | 'congo brazzaville' | 'ch' | 'switzerland' | 'ci' | 'cote divoire' | 'ck' | 'cook islands' | 'cl' | 'chile' | 'cm' | 'cameroon' | 'cn' | 'china' | 'co' | 'colombia' | 'cr' | 'costa rica' | 'cs' | 'serbia' | 'cu' | 'cuba' | 'cv' | 'cape verde' | 'cx' | 'christmas island' | 'cy' | 'cyprus' | 'cz' | 'czech republic' | 'de' | 'germany' | 'dj' | 'djibouti' | 'dk' | 'denmark' | 'dm' | 'dominica' | 'do' | 'dominican republic' | 'dz' | 'algeria' | 'ec' | 'ecuador' | 'ee' | 'estonia' | 'eg' | 'egypt' | 'eh' | 'western sahara' | 'er' | 'eritrea' | 'es' | 'spain' | 'et' | 'ethiopia' | 'eu' | 'european union' | 'fi' | 'finland' | 'fj' | 'fiji' | 'fk' | 'falkland islands' | 'fm' | 'micronesia' | 'fo' | 'faroe islands' | 'fr' | 'france' | 'ga' | 'gabon' | 'gb' | 'united kingdom' | 'gd' | 'grenada' | 'ge' | 'georgia' | 'gf' | 'french guiana' | 'gh' | 'ghana' | 'gi' | 'gibraltar' | 'gl' | 'greenland' | 'gm' | 'gambia' | 'gn' | 'guinea' | 'gp' | 'guadeloupe' | 'gq' | 'equatorial guinea' | 'gr' | 'greece' | 'gs' | 'sandwich islands' | 'gt' | 'guatemala' | 'gu' | 'guam' | 'gw' | 'guinea-bissau' | 'gy' | 'guyana' | 'hk' | 'hong kong' | 'hm' | 'heard island' | 'hn' | 'honduras' | 'hr' | 'croatia' | 'ht' | 'haiti' | 'hu' | 'hungary' | 'id' | 'indonesia' | 'ie' | 'ireland' | 'il' | 'israel' | 'in' | 'india' | 'io' | 'indian ocean territory' | 'iq' | 'iraq' | 'ir' | 'iran' | 'is' | 'iceland' | 'it' | 'italy' | 'jm' | 'jamaica' | 'jo' | 'jordan' | 'jp' | 'japan' | 'ke' | 'kenya' | 'kg' | 'kyrgyzstan' | 'kh' | 'cambodia' | 'ki' | 'kiribati' | 'km' | 'comoros' | 'kn' | 'saint kitts and nevis' | 'kp' | 'north korea' | 'kr' | 'south korea' | 'kw' | 'kuwait' | 'ky' | 'cayman islands' | 'kz' | 'kazakhstan' | 'la' | 'laos' | 'lb' | 'lebanon' | 'lc' | 'saint lucia' | 'li' | 'liechtenstein' | 'lk' | 'sri lanka' | 'lr' | 'liberia' | 'ls' | 'lesotho' | 'lt' | 'lithuania' | 'lu' | 'luxembourg' | 'lv' | 'latvia' | 'ly' | 'libya' | 'ma' | 'morocco' | 'mc' | 'monaco' | 'md' | 'moldova' | 'me' | 'montenegro' | 'mg' | 'madagascar' | 'mh' | 'marshall islands' | 'mk' | 'macedonia' | 'ml' | 'mali' | 'mm' | 'myanmar' | 'burma' | 'mn' | 'mongolia' | 'mo' | 'macau' | 'mp' | 'northern mariana islands' | 'mq' | 'martinique' | 'mr' | 'mauritania' | 'ms' | 'montserrat' | 'mt' | 'malta' | 'mu' | 'mauritius' | 'mv' | 'maldives' | 'mw' | 'malawi' | 'mx' | 'mexico' | 'my' | 'malaysia' | 'mz' | 'mozambique' | 'na' | 'namibia' | 'nc' | 'new caledonia' | 'ne' | 'niger' | 'nf' | 'norfolk island' | 'ng' | 'nigeria' | 'ni' | 'nicaragua' | 'nl' | 'netherlands' | 'no' | 'norway' | 'np' | 'nepal' | 'nr' | 'nauru' | 'nu' | 'niue' | 'nz' | 'new zealand' | 'om' | 'oman' | 'pa' | 'panama' | 'pe' | 'peru' | 'pf' | 'french polynesia' | 'pg' | 'new guinea' | 'ph' | 'philippines' | 'pk' | 'pakistan' | 'pl' | 'poland' | 'pm' | 'saint pierre' | 'pn' | 'pitcairn islands' | 'pr' | 'puerto rico' | 'ps' | 'palestine' | 'pt' | 'portugal' | 'pw' | 'palau' | 'py' | 'paraguay' | 'qa' | 'qatar' | 're' | 'reunion' | 'ro' | 'romania' | 'rs' | 'serbia' | 'ru' | 'russia' | 'rw' | 'rwanda' | 'sa' | 'saudi arabia' | 'sb' | 'solomon islands' | 'sc' | 'seychelles' | 'gb sct' | 'scotland' | 'sd' | 'sudan' | 'se' | 'sweden' | 'sg' | 'singapore' | 'sh' | 'saint helena' | 'si' | 'slovenia' | 'sj' | 'svalbard' | 'jan mayen' | 'sk' | 'slovakia' | 'sl' | 'sierra leone' | 'sm' | 'san marino' | 'sn' | 'senegal' | 'so' | 'somalia' | 'sr' | 'suriname' | 'st' | 'sao tome' | 'sv' | 'el salvador' | 'sy' | 'syria' | 'sz' | 'swaziland' | 'tc' | 'caicos islands' | 'td' | 'chad' | 'tf' | 'french territories' | 'tg' | 'togo' | 'th' | 'thailand' | 'tj' | 'tajikistan' | 'tk' | 'tokelau' | 'tl' | 'timorleste' | 'tm' | 'turkmenistan' | 'tn' | 'tunisia' | 'to' | 'tonga' | 'tr' | 'turkey' | 'tt' | 'trinidad' | 'tv' | 'tuvalu' | 'tw' | 'taiwan' | 'tz' | 'tanzania' | 'ua' | 'ukraine' | 'ug' | 'uganda' | 'um' | 'us minor islands' | 'us' | 'america' | 'united states' | 'uy' | 'uruguay' | 'uz' | 'uzbekistan' | 'va' | 'vatican city' | 'vc' | 'saint vincent' | 've' | 'venezuela' | 'vg' | 'british virgin islands' | 'vi' | 'us virgin islands' | 'vn' | 'vietnam' | 'vu' | 'vanuatu' | 'gb wls' | 'wales' | 'wf' | 'wallis and futuna' | 'ws' | 'samoa' | 'ye' | 'yemen' | 'yt' | 'mayotte' | 'za' | 'south africa' | 'zm' | 'zambia' | 'zw' | 'zimbabwe'
+    type SemanticCOLORS = 'red' | 'orange' | 'yellow' | 'olive' | 'green' | 'teal' | 'blue' | 'violet' | 'purple' | 'pink' | 'brown' | 'grey' | 'black' | 'twitter' | 'google plus' | 'facebook'
+
+    type SemanticSOCIAL = 'facebook' | 'google plus' | 'vk' | 'twitter' | 'linkedin' | 'instagram' | 'youtube'
+
+    type SemanticROTATION = 'clockwise' | 'counterclockwise'
+
+    type SemanticFLOATS = 'left' | 'right'
+
+    type SemanticSIZES = 'mini' | 'tiny' | 'small' | 'medium' | 'large' | 'big' | 'huge' | 'massive'
+    type SemanticTEXTALIGNMENTS = 'left' | 'center' | 'right' | 'justified'
+    type SemanticVERTICALALIGNMENTS = 'top' | 'middle' | 'bottom'
+    type SemanticWIDTHSNUMBER = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15' | '16'
+    type SemanticWIDTHSSTRING = 'one' | 'two' | 'three' | 'four' | 'five' | 'six' | 'seven' | 'eight' | 'nine' | 'ten' | 'eleven' | 'twelve' | 'thirteen' | 'fourteen' | 'fifteen' | 'sixteen'
+    type SemanticCOUNTRY = 'ad' | 'andorra' | 'ae' | 'united arab emirates' | 'uae' | 'af' | 'afghanistan' | 'ag' | 'antigua' | 'ai' | 'anguilla' | 'al' | 'albania' | 'am' | 'armenia' | 'an' | 'netherlands antilles' | 'ao' | 'angola' | 'ar' | 'argentina' | 'as' | 'american samoa' | 'at' | 'austria' | 'au' | 'australia' | 'aw' | 'aruba' | 'ax' | 'aland islands' | 'az' | 'azerbaijan' | 'ba' | 'bosnia' | 'bb' | 'barbados' | 'bd' | 'bangladesh' | 'be' | 'belgium' | 'bf' | 'burkina faso' | 'bg' | 'bulgaria' | 'bh' | 'bahrain' | 'bi' | 'burundi' | 'bj' | 'benin' | 'bm' | 'bermuda' | 'bn' | 'brunei' | 'bo' | 'bolivia' | 'br' | 'brazil' | 'bs' | 'bahamas' | 'bt' | 'bhutan' | 'bv' | 'bouvet island' | 'bw' | 'botswana' | 'by' | 'belarus' | 'bz' | 'belize' | 'ca' | 'canada' | 'cc' | 'cocos islands' | 'cd' | 'congo' | 'cf' | 'central african republic' | 'cg' | 'congo brazzaville' | 'ch' | 'switzerland' | 'ci' | 'cote divoire' | 'ck' | 'cook islands' | 'cl' | 'chile' | 'cm' | 'cameroon' | 'cn' | 'china' | 'co' | 'colombia' | 'cr' | 'costa rica' | 'cs' | 'serbia' | 'cu' | 'cuba' | 'cv' | 'cape verde' | 'cx' | 'christmas island' | 'cy' | 'cyprus' | 'cz' | 'czech republic' | 'de' | 'germany' | 'dj' | 'djibouti' | 'dk' | 'denmark' | 'dm' | 'dominica' | 'do' | 'dominican republic' | 'dz' | 'algeria' | 'ec' | 'ecuador' | 'ee' | 'estonia' | 'eg' | 'egypt' | 'eh' | 'western sahara' | 'er' | 'eritrea' | 'es' | 'spain' | 'et' | 'ethiopia' | 'eu' | 'european union' | 'fi' | 'finland' | 'fj' | 'fiji' | 'fk' | 'falkland islands' | 'fm' | 'micronesia' | 'fo' | 'faroe islands' | 'fr' | 'france' | 'ga' | 'gabon' | 'gb' | 'united kingdom' | 'gd' | 'grenada' | 'ge' | 'georgia' | 'gf' | 'french guiana' | 'gh' | 'ghana' | 'gi' | 'gibraltar' | 'gl' | 'greenland' | 'gm' | 'gambia' | 'gn' | 'guinea' | 'gp' | 'guadeloupe' | 'gq' | 'equatorial guinea' | 'gr' | 'greece' | 'gs' | 'sandwich islands' | 'gt' | 'guatemala' | 'gu' | 'guam' | 'gw' | 'guinea-bissau' | 'gy' | 'guyana' | 'hk' | 'hong kong' | 'hm' | 'heard island' | 'hn' | 'honduras' | 'hr' | 'croatia' | 'ht' | 'haiti' | 'hu' | 'hungary' | 'id' | 'indonesia' | 'ie' | 'ireland' | 'il' | 'israel' | 'in' | 'india' | 'io' | 'indian ocean territory' | 'iq' | 'iraq' | 'ir' | 'iran' | 'is' | 'iceland' | 'it' | 'italy' | 'jm' | 'jamaica' | 'jo' | 'jordan' | 'jp' | 'japan' | 'ke' | 'kenya' | 'kg' | 'kyrgyzstan' | 'kh' | 'cambodia' | 'ki' | 'kiribati' | 'km' | 'comoros' | 'kn' | 'saint kitts and nevis' | 'kp' | 'north korea' | 'kr' | 'south korea' | 'kw' | 'kuwait' | 'ky' | 'cayman islands' | 'kz' | 'kazakhstan' | 'la' | 'laos' | 'lb' | 'lebanon' | 'lc' | 'saint lucia' | 'li' | 'liechtenstein' | 'lk' | 'sri lanka' | 'lr' | 'liberia' | 'ls' | 'lesotho' | 'lt' | 'lithuania' | 'lu' | 'luxembourg' | 'lv' | 'latvia' | 'ly' | 'libya' | 'ma' | 'morocco' | 'mc' | 'monaco' | 'md' | 'moldova' | 'me' | 'montenegro' | 'mg' | 'madagascar' | 'mh' | 'marshall islands' | 'mk' | 'macedonia' | 'ml' | 'mali' | 'mm' | 'myanmar' | 'burma' | 'mn' | 'mongolia' | 'mo' | 'macau' | 'mp' | 'northern mariana islands' | 'mq' | 'martinique' | 'mr' | 'mauritania' | 'ms' | 'montserrat' | 'mt' | 'malta' | 'mu' | 'mauritius' | 'mv' | 'maldives' | 'mw' | 'malawi' | 'mx' | 'mexico' | 'my' | 'malaysia' | 'mz' | 'mozambique' | 'na' | 'namibia' | 'nc' | 'new caledonia' | 'ne' | 'niger' | 'nf' | 'norfolk island' | 'ng' | 'nigeria' | 'ni' | 'nicaragua' | 'nl' | 'netherlands' | 'no' | 'norway' | 'np' | 'nepal' | 'nr' | 'nauru' | 'nu' | 'niue' | 'nz' | 'new zealand' | 'om' | 'oman' | 'pa' | 'panama' | 'pe' | 'peru' | 'pf' | 'french polynesia' | 'pg' | 'new guinea' | 'ph' | 'philippines' | 'pk' | 'pakistan' | 'pl' | 'poland' | 'pm' | 'saint pierre' | 'pn' | 'pitcairn islands' | 'pr' | 'puerto rico' | 'ps' | 'palestine' | 'pt' | 'portugal' | 'pw' | 'palau' | 'py' | 'paraguay' | 'qa' | 'qatar' | 're' | 'reunion' | 'ro' | 'romania' | 'rs' | 'serbia' | 'ru' | 'russia' | 'rw' | 'rwanda' | 'sa' | 'saudi arabia' | 'sb' | 'solomon islands' | 'sc' | 'seychelles' | 'gb sct' | 'scotland' | 'sd' | 'sudan' | 'se' | 'sweden' | 'sg' | 'singapore' | 'sh' | 'saint helena' | 'si' | 'slovenia' | 'sj' | 'svalbard' | 'jan mayen' | 'sk' | 'slovakia' | 'sl' | 'sierra leone' | 'sm' | 'san marino' | 'sn' | 'senegal' | 'so' | 'somalia' | 'sr' | 'suriname' | 'st' | 'sao tome' | 'sv' | 'el salvador' | 'sy' | 'syria' | 'sz' | 'swaziland' | 'tc' | 'caicos islands' | 'td' | 'chad' | 'tf' | 'french territories' | 'tg' | 'togo' | 'th' | 'thailand' | 'tj' | 'tajikistan' | 'tk' | 'tokelau' | 'tl' | 'timorleste' | 'tm' | 'turkmenistan' | 'tn' | 'tunisia' | 'to' | 'tonga' | 'tr' | 'turkey' | 'tt' | 'trinidad' | 'tv' | 'tuvalu' | 'tw' | 'taiwan' | 'tz' | 'tanzania' | 'ua' | 'ukraine' | 'ug' | 'uganda' | 'um' | 'us minor islands' | 'us' | 'america' | 'united states' | 'uy' | 'uruguay' | 'uz' | 'uzbekistan' | 'va' | 'vatican city' | 'vc' | 'saint vincent' | 've' | 'venezuela' | 'vg' | 'british virgin islands' | 'vi' | 'us virgin islands' | 'vn' | 'vietnam' | 'vu' | 'vanuatu' | 'gb wls' | 'wales' | 'wf' | 'wallis and futuna' | 'ws' | 'samoa' | 'ye' | 'yemen' | 'yt' | 'mayotte' | 'za' | 'south africa' | 'zm' | 'zambia' | 'zw' | 'zimbabwe'
+    type SemanticPOSITIONING = 'top left' | 'top right' | 'bottom right' | 'bottom left' | 'right center' | 'left center' | 'top center' | 'bottom center';
+
+    type SemanticGenericOnClick = (event: any, value: any) => void;
+    type SemanticFormOnClick = (event: any, object: Object) => void;
+    type SemanticSearchOnClick = (event: any, value: any, text: string) => void;  // TODO - not sure if this is correct.
+
+    // ======================================================
+    // Events
+    // ======================================================
+
+    interface ReactMouseEvents<T> {
+        // MouseEvents
+
+        /**
+       * Called after user's click.
+       * @param {SyntheticEvent} event - React's original SyntheticEvent.
+       * @param {object} data - All props.
+       */
+        onClick?: React.MouseEventHandler<T>;
+        onContextMenu?: React.MouseEventHandler<T>;
+        onDoubleClick?: React.MouseEventHandler<T>;
+        onDrag?: React.DragEventHandler<T>;
+        onDragEnd?: React.DragEventHandler<T>;
+        onDragEnter?: React.DragEventHandler<T>;
+        onDragExit?: React.DragEventHandler<T>;
+        onDragLeave?: React.DragEventHandler<T>;
+        onDragOver?: React.DragEventHandler<T>;
+        onDragStart?: React.DragEventHandler<T>;
+        onDrop?: React.DragEventHandler<T>;
+        onMouseDown?: React.MouseEventHandler<T>;
+        onMouseEnter?: React.MouseEventHandler<T>;
+        onMouseLeave?: React.MouseEventHandler<T>;
+        onMouseMove?: React.MouseEventHandler<T>;
+        onMouseOut?: React.MouseEventHandler<T>;
+        onMouseOver?: React.MouseEventHandler<T>;
+        onMouseUp?: React.MouseEventHandler<T>;
+    }
+
+    // Focus Events
+    interface ReactFocusEvents<T> {
+        onFocus?: React.FocusEventHandler<T>;
+        onBlur?: React.FocusEventHandler<T>;
+    }
+
+    interface FormEventHandler<E> {
+        (event: E, ...params: any[]): void;
+    }
+
+    // Form Events
+    interface ReactFormEvents<T> {
+        onChange?: FormEventHandler<React.FormEvent<T>>;
+        onInput?: FormEventHandler<React.FormEvent<T>>;
+        onSubmit?: FormEventHandler<React.FormEvent<T>>;
+    }
 
     interface GenericProps {
         // --- Optional ---
@@ -38,7 +100,7 @@ declare module "semantic-ui-react" {
         fluid?: boolean,
         text?: boolean,
         /** Describes how the text inside this component should be aligned. */
-        textAlign?: SemanticTextAlignment,
+        textAlign?: SemanticTEXTALIGNMENTS,
     }
     class Container extends React.Component<ContainerProps, void> { }
 
@@ -69,7 +131,7 @@ declare module "semantic-ui-react" {
     // ----------------------------------
     interface FlagProps extends GenericProps {
         // --- Required ---
-        name: SemanticCountry,
+        name: SemanticCOUNTRY,
     }
     class Flag extends React.Component<FlagProps, void> { }
 
@@ -83,7 +145,7 @@ declare module "semantic-ui-react" {
         /** Icon can formatted to appear circular */
         circular?: boolean,
         /** Color of the icon. */
-        color?: SemanticColor,
+        color?: SemanticCOLORS,
         /** Icons can display a smaller corner icon */
         corner?: boolean,
         /** Show that the icon is inactive */
@@ -101,9 +163,9 @@ declare module "semantic-ui-react" {
         /** Icon can be used as a simple loader */
         loading?: boolean,
         /** Icon can rotated */
-        rotated?: SemanticRotation,
+        rotated?: SemanticROTATION,
         /** Size of the icon. */
-        size?: SemanticSize,
+        size?: SemanticSIZES,
     }
     class Icon extends React.Component<IconProps, void> { }
 
@@ -181,7 +243,7 @@ declare module "semantic-ui-react" {
         indeterminate?: boolean,
         inverted?: boolean,
         inline?: boolean | 'centered',
-        size?: SemanticSize,
+        size?: SemanticSIZES,
         text?: React.ReactNode,
     }
     class Loader extends React.Component<LoaderProps, void> { }
@@ -190,7 +252,7 @@ declare module "semantic-ui-react" {
     // ----------------------------------
     interface RailProps extends GenericProps {
         // --- Required ---
-        position: SemanticFloatDirection,
+        position: SemanticFLOATS,
 
         // --- Optional ---
         attached?: boolean,
@@ -199,7 +261,7 @@ declare module "semantic-ui-react" {
         dividing?: boolean,
         internal?: boolean,
         // TODO(zuko): this should not support 'medium' from SemanticSize
-        size?: SemanticSize,
+        size?: SemanticSIZES,
     }
     class Rail extends React.Component<RailProps, void> { }
 
@@ -246,7 +308,7 @@ declare module "semantic-ui-react" {
         icon?: React.ReactNode,
         sections?: Array<any>,
         // TODO(zuko): should not include 'medium'
-        size?: SemanticSize,
+        size?: SemanticSIZES,
     }
     class Breadcrumb extends React.Component<BreadcrumbProps, void> {
         public static Divider: BreadcrumbDivider
@@ -254,7 +316,135 @@ declare module "semantic-ui-react" {
     }
     // TODO(zuko): Form
     // TODO(zuko): Grid
-    // TODO(zuko): Menu
+    // Menu (from node_modules/semantic-ui-react/src/collections/Menu/index.d.ts)
+    type MenuPropsIcon = 'labeled';
+    type MenuPropsTabular = 'right';
+    type MenuPropsFixed = 'left' | 'right' | 'bottom' | 'top';
+    type MenuPropsAttached = 'bottom' | 'top';
+
+    interface MenuProps {
+        activeIndex?: number;
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** A menu may be attached to other content segments. */
+        attached?: boolean | MenuPropsAttached;
+        /** A menu item or menu can have no borders. */
+        borderless?: boolean;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** Additional colors can be specified. */
+        color?: SemanticCOLORS;
+        /** A menu can take up only the space necessary to fit its content. */
+        compact?: boolean;
+        /** Initial activeIndex value. */
+        defaultActiveIndex?: number;
+        /** A menu can be fixed to a side of its context. */
+        fixed?: MenuPropsFixed;
+        /** A menu can be floated. */
+        floated?: boolean | SemanticFLOATS;
+        /** A vertical menu may take the size of its container. */
+        fluid?: boolean;
+        /** A menu may have labeled icons. */
+        icon?: boolean | MenuPropsIcon;
+        /** A menu may have its colors inverted to show greater contrast. */
+        inverted?: boolean;
+        /** Shorthand array of props for Menu. */
+        items?: any;  // TODO - check type;
+        /**
+         * onClick handler for MenuItem. Mutually exclusive with children.
+         *
+         * @param {SyntheticEvent} event - React's original SyntheticEvent.
+         * @param {object} data - All item props.
+         */
+        onItemClick?: React.MouseEventHandler<HTMLDivElement>;
+        /** A pagination menu is specially formatted to present links to pages of content. */
+        pagination?: boolean;
+        /** A menu can point to show its relationship to nearby content. */
+        pointing?: boolean;
+        /** A menu can adjust its appearance to de-emphasize its contents. */
+        secondary?: boolean;
+        /** A menu can vary in size. */
+        size?: SemanticSIZES;  // TODO - remove medium and big.
+        /** A menu can stack at mobile resolutions. */
+        stackable?: boolean;
+        /** A menu can be formatted to show tabs of information. */
+        tabular?: boolean | MenuPropsTabular;
+        /** A menu can be formatted for text content. */
+        text?: boolean;
+        /** A vertical menu displays elements vertically. */
+        vertical?: boolean;
+        /** A menu can have its items divided evenly. */
+        widths?: number | SemanticWIDTHSSTRING | SemanticWIDTHSNUMBER | number;
+    }
+
+    interface MenuClass extends React.ComponentClass<MenuProps> {
+        Header: typeof MenuHeader;
+        Item: typeof MenuItem;
+        Menu: typeof MenuMenuItem;
+    }
+
+    const Menu: MenuClass;
+
+    interface MenuHeaderProps {
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** Shorthand for primary content. */
+        content?: any;
+    }
+
+    const MenuHeader: React.ComponentClass<MenuHeaderProps>;
+
+    interface MenuItemProps extends ReactMouseEvents<HTMLElement> {
+        /** A menu item can be active. */
+        active?: boolean;
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** Additional colors can be specified. */
+        color?: SemanticCOLORS;
+        /** Shorthand for primary content. */
+        content?: string;
+        /** A menu item or menu can remove element padding, vertically or horizontally. */
+        fitted?: boolean | 'horizontally' | 'vertically';
+        /** A menu item may include a header or may itself be a header. */
+        header?: boolean;
+        /** Add an icon by icon name or pass an <Icon /.> */
+        icon?: any; // TODO - check type.
+        /** MenuItem index inside Menu. */
+        index?: number;
+        /** A menu item can be link. */
+        link?: boolean;
+        /** Internal name of the MenuItem. */
+        name?: string;
+        /** A menu item can take right position. */
+        position?: 'right';
+    }
+
+    const MenuItem: React.ComponentClass<MenuItemProps>;
+
+    interface MenuMenuProps {
+        /** An element type to render as (string or function). */
+        as?: any;
+        /** Primary content. */
+        children?: React.ReactNode;
+        /** Additional classes. */
+        className?: string;
+        /** A sub menu can take right position. */
+        position?: 'right';
+    }
+
+    const MenuMenuItem: React.ComponentClass<MenuMenuProps>;
+
+
     // Message
     // ----------------------------------
     interface MessageContentProps extends GenericProps {
@@ -301,7 +491,7 @@ declare module "semantic-ui-react" {
         list?: Array<string>
         onDismiss?: React.ReactEventHandler<any>,
         // TODO(zuko): should not include 'medium'
-        size?: SemanticSize,
+        size?: SemanticSIZES,
         visible?: boolean,
         // possible types
         error?: boolean,
