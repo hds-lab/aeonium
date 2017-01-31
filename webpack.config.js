@@ -3,9 +3,16 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    './src/index'
+  entry: {
+    app: [
+      'webpack/hot/only-dev-server',
+      'webpack-dev-server/client?http://localhost:3000',
+      './src/index'
+    ]
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -21,6 +28,9 @@ module.exports = {
       exclude: /node_modules/,
       include: path.join(__dirname, 'src'),
       use: [
+        {
+          loader: 'react-hot-loader'
+        },
         {
           loader: 'awesome-typescript-loader'
         }

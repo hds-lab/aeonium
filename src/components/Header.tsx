@@ -16,7 +16,7 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
     public render() {
         return (
             <div>
-                <img src={require('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
+                <img src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
                 <header>Aeonium</header>
             </div>
         );

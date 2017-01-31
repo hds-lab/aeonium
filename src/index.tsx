@@ -3,15 +3,23 @@ import * as ReactDOM from 'react-dom';
 import DevTools from 'mobx-react-devtools';
 import { App } from './App';
 
-class AppRoot extends React.Component<void, void> {
-    render() {
-        return (
-            <div>
-                <App />
-                <DevTools />
-            </div>
-        );
-    }
+const appRoot = (AppComponent: typeof App) => {
+    return (
+        <div>
+            <AppComponent />
+            <DevTools />
+        </div>
+    );
 };
 
-ReactDOM.render(<AppRoot />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+ReactDOM.render(appRoot(App), rootElement);
+
+if (module.hot) {
+    // module.hot.accept();
+    module.hot.accept("./App", () => {
+        const NextApp = require<{ App: typeof App }>("./App").App;
+        ReactDOM.render(appRoot(NextApp), rootElement);
+    });
+}
