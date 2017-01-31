@@ -26,7 +26,7 @@ declare module "semantic-ui-react" {
     interface ButtonProps extends GenericProps {
         // --- Optional ---
         children?: React.ReactNode,
-        content?: string
+        onClick?: React.MouseEventHandler<HTMLButtonElement>;
     }
     class Button extends React.Component<ButtonProps, void> { }
 
