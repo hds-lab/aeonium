@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Button, ListGroup, ListGroupItem, ProgressBar } from 'react-bootstrap';
+import { Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 // import DevTools from 'mobx-react-devtools';
 
 import { IAppStoreProps } from '../stores/appStore'
@@ -17,15 +17,15 @@ interface IContentState {
 
 @observer
 export class Content extends React.Component<IContentProps, IContentState> {
-  constructor(props: IContentProps){
+  constructor(props: IContentProps) {
     super(props);
     this._getPartners = this._getPartners.bind(this);
   }
 
   private _getPartners() {
-      this.props.store.partnerStore.getPartners();
-    }
-  
+    this.props.store.partnerStore.getPartners();
+  }
+
   public render() {
     const {count, doubleCount } = this.props.store;
     const { partners } = this.props.store.partnerStore;
@@ -42,10 +42,11 @@ export class Content extends React.Component<IContentProps, IContentState> {
     const partnerItems = partners.map((partner, i) => {
       return (
         <ListGroupItem key={i}>{partner}</ListGroupItem>
-    );}
+      );
+    }
     );
-    
-   
+
+
 
     return (
       <div>

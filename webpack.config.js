@@ -13,16 +13,31 @@ module.exports = {
     publicPath: '/static/'
   },
   resolve: {
-    extensions: ['', '.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx']
   },
   module: {
-    loaders: [{
-      test: /\.tsx?$/,
+    rules: [{
+      test: /\.ts(x?)$/,
+      exclude: /node_modules/,
+      include: path.join(__dirname, 'src'),
+      use: [
+        {
+          loader: 'awesome-typescript-loader'
+        }
+      ]
+    },
+    {
       test: /.*\.(gif|png|jpe?g|svg)$/i,
-      loaders: ['awesome-typescript-loader', 
-      'file?hash=sha512&digest=hex&name=[hash].[ext]',
-      'image-webpack'],
-      include: path.join(__dirname, 'src')
+      exclude: /node_modules/,
+      include: path.join(__dirname, 'src'),
+      use: [
+        {
+          loader: 'file?hash=sha512&digest=hex&name=[hash].[ext]'
+        },
+        {
+          loader: 'image-webpack'
+        }
+      ]
     }]
   }
 };
