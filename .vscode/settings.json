@@ -7,5 +7,5 @@
   "editor.trimAutoWhitespace": true,
   "files.trimTrailingWhitespace": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.formatOnSave": true
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }

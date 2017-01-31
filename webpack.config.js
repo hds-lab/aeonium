@@ -28,7 +28,7 @@ module.exports = {
     },
     {
       test: /.*\.(gif|png|jpe?g|svg)$/i,
-      exclude: /node_modules/,
+      exclude: path.join(__dirname, 'node_modules'),
       include: path.join(__dirname, 'src'),
       use: [
         {
