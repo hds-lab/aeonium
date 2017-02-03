@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dropdown, Icon, Menu } from 'semantic-ui-react'
+import { Dropdown, Icon, Menu, Image } from 'semantic-ui-react'
 
 import { IAppStoreProps } from '../stores/appStore'
 
@@ -24,7 +24,11 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         return (
             <div>
                 <Menu attached='top'>
-                    <Dropdown item icon='wrench' simple>
+                    <Menu.Item>
+                        <Image avatar src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
+                    </Menu.Item>
+
+                    <Dropdown item icon='settings' simple>
                         <Dropdown.Menu>
                             <Dropdown.Item>
                                 <Icon name='dropdown' />
