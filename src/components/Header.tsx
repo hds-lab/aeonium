@@ -25,30 +25,14 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
             <div>
                 <Menu attached='top'>
                     <Menu.Item>
-                        <Image avatar src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
+                        <div>
+                            <Image avatar src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
+                            <span>Aeonium</span>
+                        </div>
                     </Menu.Item>
 
-                    <Dropdown item icon='settings' simple>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>
-                                <Icon name='dropdown' />
-                                <span className='text'>New</span>
 
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>Document</Dropdown.Item>
-                                    <Dropdown.Item>Image</Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown.Item>
-                            <Dropdown.Item>Open</Dropdown.Item>
-                            <Dropdown.Item>Save...</Dropdown.Item>
-                            <Dropdown.Item>Edit Permissions</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Header>Export</Dropdown.Header>
-                            <Dropdown.Item>Share</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-
-                    <Menu.Menu position='right'>
+                    <Menu.Menu>
                         <div className='ui right aligned category search item'>
                             <div className='ui transparent icon input'>
                                 <input className='prompt' type='text' placeholder='Search ...' />
@@ -56,6 +40,27 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
                             </div>
                             <div className='results'></div>
                         </div>
+                    </Menu.Menu>
+
+                    <Menu.Menu position='right'>
+                        <Dropdown icon='settings' simple>
+                            <Dropdown.Menu>
+                                <Dropdown.Item>
+                                    <Icon name='dropdown' />
+                                    <span className='text'>New</span>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item>Document</Dropdown.Item>
+                                        <Dropdown.Item>Image</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown.Item>
+                                <Dropdown.Item>Open</Dropdown.Item>
+                                <Dropdown.Item>Save...</Dropdown.Item>
+                                <Dropdown.Item>Edit Permissions</Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Header>Export</Dropdown.Header>
+                                <Dropdown.Item>Share</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </Menu.Menu>
                 </Menu>
             </div>
