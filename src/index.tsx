@@ -1,7 +1,15 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import DevTools from 'mobx-react-devtools';
+//import { browserHistory } from 'react-router';
+//import { syncHistoryWithStore } from 'react-router-redux';
+//import { AppContainer } from 'react-hot-loader';
+//import configureStore from './stores/configureStore';
+
 import { App } from './App';
+
+//const store = configureStore(null);
+//const history = syncHistoryWithStore(browserHistory, store);
 
 const appRoot = (AppComponent: typeof App) => {
     return (
