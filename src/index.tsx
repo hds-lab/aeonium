@@ -4,25 +4,14 @@ import * as ReactDOM from 'react-dom';
 import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
+// import { routerReducer as routing } from 'react-router-redux';
 import configureStore from './stores/configureStore';
+
 
 import { Root } from './Root';
 
-const routeStore = configureStore(null);
+const routeStore = configureStore({});
 const history = syncHistoryWithStore(browserHistory, routeStore);
-
-// const appRoot = (AppComponent: typeof App) => {
-//     return (
-//         <div>
-//             <AppComponent />
-//             <DevTools />
-//         </div>
-//     );
-// };
-
-// const rootElement = document.getElementById('root');
-
-// ReactDOM.render(appRoot(App), rootElement);
 
 ReactDOM.render(
     <AppContainer>
@@ -31,13 +20,6 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-// if (module.hot) {
-//     // module.hot.accept();
-//     module.hot.accept("./App", () => {
-//         const NextApp = require<{ App: typeof App }>("./App").App;
-//         ReactDOM.render(appRoot(NextApp), rootElement);
-//     });
-// }
 
 if (module.hot) {
     module.hot.accept('./Root', () => {
