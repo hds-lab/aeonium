@@ -8,7 +8,7 @@ export class AppStore {
 
     this.partnerStore = new PartnerStore(new ServiceManager(baseUrl));
   }
-  
+
   public partnerStore: PartnerStore;
 
   @observable
