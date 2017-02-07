@@ -10,7 +10,7 @@ interface IAmbiguityState {
 
 }
 
-export class  Ambiguity extends React.Component<IAmbiguityProps, IAmbiguityState> {
+export default class Ambiguity extends React.Component<IAmbiguityProps, IAmbiguityState> {
     public render() {
         return (
             <header>Aeonium Ambiguity</header>

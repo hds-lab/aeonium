@@ -10,7 +10,7 @@ interface ICodingState {
 
 }
 
-export class  Coding extends React.Component<ICodingProps, ICodingState> {
+export default class Coding extends React.Component<ICodingProps, ICodingState> {
     public render() {
         return (
             <header>Aeonium Coding</header>

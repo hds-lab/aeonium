@@ -10,7 +10,7 @@ interface IFeaturesState {
 
 }
 
-export class  Features extends React.Component<IFeaturesProps, IFeaturesState> {
+export default class Features extends React.Component<IFeaturesProps, IFeaturesState> {
     public render() {
         return (
             <header>Aeonium Features</header>

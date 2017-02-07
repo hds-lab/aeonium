@@ -6,7 +6,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import configureStore from './stores/configureStore';
 
-import { App } from './App';
+import { Root } from './Root';
 
 const routeStore = configureStore(null);
 const history = syncHistoryWithStore(browserHistory, routeStore);
@@ -26,7 +26,7 @@ const history = syncHistoryWithStore(browserHistory, routeStore);
 
 ReactDOM.render(
     <AppContainer>
-        <App routeStore={routeStore} history={history} />
+        <Root routeStore={routeStore} history={history} />
     </AppContainer>,
     document.getElementById('root')
 );
@@ -40,11 +40,11 @@ ReactDOM.render(
 // }
 
 if (module.hot) {
-    module.hot.accept('./App', () => {
-        const NextApp = require<{ App: typeof App }>("./App").App;
+    module.hot.accept('./Root', () => {
+        const NextRoot = require<{ Root: typeof Root }>("./Root").Root;
         ReactDOM.render(
             <AppContainer>
-                <NextApp routeStore={routeStore} history={history} />
+                <NextRoot routeStore={routeStore} history={history} />
             </AppContainer>,
             document.getElementById('root')
         );

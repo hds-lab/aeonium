@@ -10,7 +10,7 @@ interface IOverviewState {
 
 }
 
-export class  Overview extends React.Component<IOverviewProps, IOverviewState> {
+export default class Overview extends React.Component<IOverviewProps, IOverviewState> {
     public render() {
         return (
             <header>Aeonium Overview</header>
