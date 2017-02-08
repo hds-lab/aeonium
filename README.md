@@ -1,6 +1,6 @@
 # React-TypeScript
 
-Aweonium
+Aeonium
 
 Initial run:
 
