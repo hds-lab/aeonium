@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { observer } from 'mobx-react';
-import { Button, List, ListItem} from "semantic-ui-react";
+import { Button, List, ListItem } from "semantic-ui-react";
 
 import { IAppStoreProps } from '../stores/appStore'
 
@@ -56,6 +56,9 @@ export class Content extends React.Component<IContentProps, IContentState> {
                     <List>{partnerItems}</List>
                 </div>
 
+                <div>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Dropdown, Icon, Menu, Image } from 'semantic-ui-react'
+import { Link } from 'react-router';
 
 import { IAppStoreProps } from '../stores/appStore'
 
@@ -23,8 +24,14 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
     public render() {
         return (
             <div>
+                <div>
+                    <Link to="/">Overview</Link>
+                </div>
+                <div>
+                    <Link to="/coding">Coding</Link>
+                </div>
                 <Menu attached='top'>
-                    <Menu.Item>
+                    <Menu.Item as={Link} to='/'>
                         <div>
                             <Image avatar src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
                             <span>Aeonium</span>

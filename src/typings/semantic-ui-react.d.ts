@@ -509,6 +509,8 @@ declare module "semantic-ui-react" {
         name?: string;
         /** A menu item can take right position. */
         position?: 'right';
+        /** A augmented Menu Item can use the to prop to redirect Links */
+        to?: string;
     }
 
     const MenuItem: React.ComponentClass<MenuItemProps>;
