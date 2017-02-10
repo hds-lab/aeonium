@@ -3,7 +3,7 @@ import rootReducer from '../reducers';
 
 export default function configureStore(initialState) {
     if (typeof initialState === 'undefined') {
-        console.log("undefined initialState");
+        console.log('undefined initialState');
     }
 
     const store = createStore(
