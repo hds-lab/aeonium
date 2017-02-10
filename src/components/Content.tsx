@@ -36,7 +36,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
 
         const partnerItems = partners.map((partner, i) => {
             return (
-                <ListItem key={i}>{partner}</ListItem>
+                <ListItem key={i}>{partner.username}</ListItem>
             );
         }
         );
