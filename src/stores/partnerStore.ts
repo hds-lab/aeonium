@@ -5,11 +5,11 @@ export class PartnerStore {
   constructor(private serviceManager: ServiceManager) {
   }
   @observable
-  public partners: any[] = [];
+  public partners: string[] = [];
 
   public getPartners() {
     this.serviceManager.getPartners()
-      .then((value: Axios.AxiosXHR<any[]>) => {
+      .then((value: Axios.AxiosXHR<string[]>) => {
         this._setPartners(value.data);
       })
       .catch((error) => {
@@ -18,7 +18,7 @@ export class PartnerStore {
   }
 
   @action
-  private _setPartners(partners: any[]) {
+  private _setPartners(partners: string[]) {
     this.partners = partners;
   }
 
