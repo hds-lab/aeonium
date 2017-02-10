@@ -9,6 +9,6 @@ export class ServiceManager {
     });
   }
   public getPartners() {
-    return this.service.get('/api/partners');
+    return this.service.get('/api/partners/', {withCredentials: true});
   }
 } 
