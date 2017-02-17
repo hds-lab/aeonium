@@ -55,10 +55,6 @@ export default class Overview extends React.Component<IOverviewProps, IOverviewS
                     <Button onClick={this._getPartners}>Get Partners</Button>
                     <List>{partnerItems}</List>
                 </div>
-
-                <div>
-                    {this.props.children}
-                </div>
             </div>
         );
     }
