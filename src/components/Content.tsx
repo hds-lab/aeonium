@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Menu, Segment, Grid } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
+import { Link } from 'react-router';
 
 import { IAppStoreProps } from '../stores/appStore'
 
@@ -31,16 +32,16 @@ export class Content extends React.Component<IContentProps, IContentState> {
         return (
             <div>
                 <Grid>
-                    <Grid.Column width={2}>
-                        <Menu fluid vertical tabular>
-                            <Menu.Item name='overview' active={this.state.activeItem === 'overview'} onClick={this._handleItemClick.bind(this, 'overview')} />
-                            <Menu.Item name='coding' active={this.state.activeItem === 'coding'} onClick={this._handleItemClick.bind(this, 'coding')} />
-                            <Menu.Item name='features' active={this.state.activeItem === 'features'} onClick={this._handleItemClick.bind(this, 'features')} />
-                            <Menu.Item name='disagreement' active={this.state.activeItem === 'disagreement'} onClick={this._handleItemClick.bind(this, 'disagreement')} />
+                    <Grid.Column width={3}>
+                        <Menu fluid vertical pointing>
+                            <Menu.Item name='overview' active={this.state.activeItem === 'overview'} as={Link} to='/' onClick={this._handleItemClick.bind(this, 'overview')} />
+                            <Menu.Item name='coding' active={this.state.activeItem === 'coding'} as={Link} to='/coding' onClick={this._handleItemClick.bind(this, 'coding')} />
+                            <Menu.Item name='features' active={this.state.activeItem === 'features'} as={Link} to='/features' onClick={this._handleItemClick.bind(this, 'features')} />
+                            <Menu.Item name='ambiguity' active={this.state.activeItem === 'ambiguity'} as={Link} to='/ambiguity' onClick={this._handleItemClick.bind(this, 'ambiguity')} />
                         </Menu>
                     </Grid.Column>
 
-                    <Grid.Column stretched width={14}>
+                    <Grid.Column stretched width={13}>
                         <Segment>
                             {React.Children.map(this.props.children, (child: React.ReactElement<any>) => React.cloneElement(child, { store: this.props.store }))}
                         </Segment>

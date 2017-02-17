@@ -12,24 +12,12 @@ interface IHeaderState {
 
 }
 
-// return (
-//     <div>
-//         <img src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
-//         <header>Aeonium</header>
-//     </div>
-// );
 
 // @observer
 export class Header extends React.Component<IHeaderProps, IHeaderState> {
     public render() {
         return (
             <div>
-                <div>
-                    <Link to="/">Overview</Link>
-                </div>
-                <div>
-                    <Link to="/coding">Coding</Link>
-                </div>
                 <Menu attached='top'>
                     <Menu.Item as={Link} to='/'>
                         <div>
