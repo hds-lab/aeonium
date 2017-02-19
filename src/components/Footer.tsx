@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Container, Divider } from 'semantic-ui-react'
 
 import { IAppStoreProps } from '../stores/appStore'
 
@@ -13,7 +14,10 @@ interface IFooterState {
 export class Footer extends React.Component<IFooterProps, IFooterState> {
     public render() {
         return (
-            <header>Footer</header>
+            <Container>
+                <Divider />
+                <header>Footer</header>
+            </Container>
         );
     }
 };

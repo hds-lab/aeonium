@@ -5,9 +5,8 @@ import * as React from 'react'
 // import DevTools from 'mobx-react-devtools'
 
 
-import { Content } from './components/Content'
-import { Chart } from './components/Chart'
 import { Header } from './components/Header'
+import { Main } from './components/Main'
 import { Footer } from './components/Footer'
 import { AppStore } from './stores/appStore'
 
@@ -18,8 +17,7 @@ export class App extends React.Component<void, void> {
         return (
             <div>
               <Header store={storeInstance} />
-              <Content store={storeInstance} />
-              <Chart store={storeInstance} />
+              <Main />
               <Footer store={storeInstance} />
             </div>
         );

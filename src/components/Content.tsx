@@ -15,11 +15,11 @@ interface IContentState {
 export class Content extends React.Component<IContentProps, IContentState> {
     constructor(props: IContentProps) {
         super(props);
-        this._getPartners = this._getPartners.bind(this);
+        this._getPartners = this._getPartners.bind(this)
     }
 
     private _getPartners() {
-        this.props.store.partnerStore.getPartners();
+        this.props.store.partnerStore.getPartners()
     }
 
     // prototype bit to show d3 directly changing the DOM
@@ -28,7 +28,7 @@ export class Content extends React.Component<IContentProps, IContentState> {
             .attr("class", "item")
             .style("color", function() {
                 return "hsl(" + Math.random() * 360 + ",100%,50%)";
-            });
+            })
     }
 
     public render() {
