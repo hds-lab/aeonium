@@ -11,14 +11,19 @@ export class Main extends React.Component<IContentProps, IContentState> {
     state = { activeItem : 'Overview'}
 
     constructor(props: IContentProps) {
-        super(props)
+        super(props);
+        this.handleItemClick = this.handleItemClick.bind(this)
     }
 
-    private handleItemClick = ({ name }) => this.setState({ activeItem: name })
+    handleItemClick(e, {name}) {
+      console.log(e.target.attributes)
+      console.log(name)
+      this.setState({ activeItem: name })
+    }
 
     public render() {
         const mainStyle = {
-            height: '500px',
+            height: '300px',
             background: 'lightsteelblue',
             margin: '50px 0px 50px 0px'
         }
@@ -31,10 +36,10 @@ export class Main extends React.Component<IContentProps, IContentState> {
                 <Grid>
                   <Grid.Column width={4}>
                     <Menu fluid vertical tabular>
-                      <Menu.Item name='Overview' active={activeItem === 'Overview'} onClick = {this.handleItemClick} />
+                      <Menu.Item name='Overview' active={activeItem === 'Overview'} onClick = {this.handleItemClick}/>
                       <Menu.Item name='Coding' active={activeItem === 'Coding'} onClick = {this.handleItemClick} />
                       <Menu.Item name='Features' active={activeItem === 'Features'} onClick = {this.handleItemClick} />
-                      <Menu.Item name='Disagreement' active={activeItem === 'Disagreement'} onClick = {this.handleItemClick} />
+                      <Menu.Item name='Disagreement' active={activeItem === 'Disagreement'} onClick = {this.handleItemClick}/>
                     </Menu>
                   </Grid.Column>
 
