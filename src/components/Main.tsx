@@ -15,7 +15,7 @@ export class Main extends React.Component<IContentProps, IContentState> {
         this.handleItemClick = this.handleItemClick.bind(this)
     }
 
-    handleItemClick(e, {name}) {
+    handleItemClick = (e, {name}) => {
       console.log(e)
       this.setState({ activeItem: name })
     }
