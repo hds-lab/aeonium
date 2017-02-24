@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Dropdown, Icon, Menu, Image } from 'semantic-ui-react'
-
 import { IAppStoreProps } from '../stores/appStore'
 
 export interface IHeaderProps extends IAppStoreProps {
@@ -10,13 +9,6 @@ export interface IHeaderProps extends IAppStoreProps {
 interface IHeaderState {
 
 }
-
-// return (
-//     <div>
-//         <img src={require<string>('url-loader?limit=10000!../../static/images/aeonium.png')} alt={'aeonium-logo'} />
-//         <header>Aeonium</header>
-//     </div>
-// );
 
 // @observer
 export class Header extends React.Component<IHeaderProps, IHeaderState> {

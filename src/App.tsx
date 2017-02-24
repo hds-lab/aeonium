@@ -7,8 +7,8 @@ import { Component } from 'react';
 
 import { IAppStoreProps } from './stores/appStore'
 
-import { Content } from './components/Content'
 import { Header } from './components/Header'
+import { Main } from './components/Main'
 import { Footer } from './components/Footer'
 import { AppStore } from './stores/appStore'
 
@@ -19,15 +19,15 @@ interface IAppState {
 }
 
 
-var appStoreInstance = new AppStore(12345, "http://localhost:8000/");
+var storeInstance = new AppStore(12345, "http://localhost:8000/");
 
 export default class App extends Component<IAppProps, IAppState> {
     render() {
         return (
             <div>
-                <Header store={appStoreInstance} />
-                <Content store={appStoreInstance} />
-                <Footer store={appStoreInstance} />
+              <Header store={storeInstance} />
+              <Main store={storeInstance} children={this.props.children} />
+              <Footer store={storeInstance} />
             </div>
         );
     }

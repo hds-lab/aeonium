@@ -349,16 +349,113 @@ declare module "semantic-ui-react" {
 
     // Segment
     // ----------------------------------
-    interface SegmentsProps extends GenericProps { }
-    class Segments extends React.Component<SegmentsProps, void> { }
+    interface SegmentProps {
 
-    interface SegmentProps extends GenericProps {
-        // --- Optional ---
-        heading?: React.ReactNode,
+        /** An element type to render as (string or function). */
+        as?: any;
+
+        /** Attach segment to other content, like a header */
+        attached?: any;
+
+        /** A basic segment has no special formatting */
+        basic?: boolean;
+
+        /** Primary content. */
+        children?: React.ReactNode;
+
+        /** A segment can be circular */
+        circular?: boolean;
+
+        /** Additional classes. */
+        className?: string;
+
+        /** A segment can clear floated content */
+        clearing?: boolean;
+
+        /** Segment can be colored */
+        color?: SemanticCOLORS | SemanticSOCIAL;
+
+        /** A segment may take up only as much space as is necessary */
+        compact?: boolean;
+
+        /** A segment may show its content is disabled */
+        disabled?: boolean;
+
+        /** Segment content can be floated to the left or right */
+        floated?: SemanticFLOATS;
+
+        /** A segment can have its colors inverted for contrast */
+        inverted?: boolean;
+
+        /** A segment may show its content is being loaded */
+        loading?: boolean;
+
+        /** A segment can increase its padding */
+        padded?: boolean;
+
+        /** Formatted to look like a pile of pages. */
+        piled?: boolean;
+
+        /** A segment may be formatted to raise above the page. */
+        raised?: boolean;
+
+        /** A segment can be formatted to appear less noticeable */
+        secondary?: boolean;
+
+        /** A segment can have different sizes. */
+        size?: SemanticSIZES;
+
+        /** Formatted to show it contains multiple pages. */
+        stacked?: boolean;
+
+        /** A segment can be formatted to appear even less noticeable */
+        tertiary?: boolean;
+
+        /** Formats content to be aligned as part of a vertical group. */
+        textAlign?: SemanticTEXTALIGNMENTS;
+
+        /** Formats content to be aligned vertically */
+        vertical?: boolean;
     }
-    class Segment extends React.Component<SegmentProps, void> {
-        public static Segments: Segments
+
+    interface SegmentClass extends React.ComponentClass<SegmentProps> {
+        Group: typeof SegmentGroup;
     }
+
+    export const Segment: SegmentClass;
+
+    interface SegmentGroupProps {
+
+        /** An element type to render as (string or function). */
+        as?: any;
+
+        /** Primary content. */
+        children?: React.ReactNode;
+
+        /** Additional classes. */
+        className?: string;
+
+        /** A segment may take up only as much space as is necessary */
+        compact?: boolean;
+
+        /** Formats content to be aligned horizontally */
+        horizontal?: boolean;
+
+        /** Formatted to look like a pile of pages. */
+        piled?: boolean;
+
+        /** A segment group may be formatted to raise above the page. */
+        raised?: boolean;
+
+        /** A segment group can have different sizes. */
+        size?: SemanticSIZES;
+
+        /** Formatted to show it contains multiple pages. */
+        stacked?: boolean;
+    }
+
+    export const SegmentGroup: React.ComponentClass<SegmentGroupProps>;
+
 
     // ======================================================
     // Collections
@@ -397,7 +494,159 @@ declare module "semantic-ui-react" {
         public static Section: BreadcrumbSection
     }
     // TODO(zuko): Form
-    // TODO(zuko): Grid
+    //
+    // Grid
+    // ----------------------------------
+    export type GridPropReversed = 'computer' | 'computer vertically' | 'mobile' | 'mobile vertically' | 'tablet' | 'tablet vertically'
+    export interface GridProps {
+
+        /** An element type to render as (string or function). */
+        as?: any;
+
+        /** A grid can have rows divided into cells. */
+        celled?: boolean | 'internally';
+
+        /** A grid can have its columns centered. */
+        centered?: boolean;
+
+        /** Primary content. */
+        children?: React.ReactNode;
+
+        /** Additional classes. */
+        className?: string;
+
+        /** Represents column count per row in Grid. */
+        columns?: number | SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number | 'equal';
+
+        /** A grid can have dividers between its columns. */
+        divided?: boolean | 'vertically';
+
+        /** A grid can double its column width on tablet and mobile sizes. */
+        doubling?: boolean;
+
+        /** A grid can preserve its vertical and horizontal gutters on first and last columns. */
+        padded?: boolean | 'horizontally' | 'vertically';
+
+        /** A grid can increase its gutters to allow for more negative space. */
+        relaxed?: boolean | 'very';
+
+        /** A grid can specify that its columns should reverse order at different device sizes. */
+        reversed?: GridPropReversed;
+
+        /** A grid can have its columns stack on-top of each other after reaching mobile breakpoints. */
+        stackable?: boolean;
+
+        /** An can stretch its contents to take up the entire grid height. */
+        stretched?: boolean;
+
+        /** A grid can specify its text alignment. */
+        textAlign?: SemanticTEXTALIGNMENTS;
+
+        /** A grid can specify its vertical alignment to have all its columns vertically centered. */
+        verticalAlign?: SemanticVERTICALALIGNMENTS;
+    }
+
+    interface GridClass extends React.ComponentClass<GridProps> {
+        Column: typeof GridColumn;
+        Row: typeof GridRow;
+    }
+
+    export const Grid: GridClass;
+
+    type GridPropOnly = 'computer' | 'large screen' | 'mobile' | 'tablet mobile' | 'tablet' | 'widescreen'
+    interface GridColumnProps {
+
+        /** An element type to render as (string or function). */
+        as?: any;
+
+        /** Primary content. */
+        children?: React.ReactNode;
+
+        /** Additional classes. */
+        className?: string;
+
+        /** A grid column can be colored. */
+        color?: SemanticCOLORS;
+
+        /** A column can specify a width for a computer. */
+        computer?: SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number;
+
+        /** A column can sit flush against the left or right edge of a row. */
+        floated?: SemanticFLOATS;
+
+        /** A column can specify a width for a large screen device. */
+        largeScreen?: SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number;
+
+        /** A column can specify a width for a mobile device. */
+        mobile?: SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number;
+
+        /** A column can appear only for a specific device, or screen sizes. */
+        only?: GridPropOnly;
+
+        /** An can stretch its contents to take up the entire grid or row height. */
+        stretched?: boolean;
+
+        /** A column can specify a width for a tablet device. */
+        tablet?: SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number;
+
+        /** A row can specify its text alignment. */
+        textAlign?: SemanticTEXTALIGNMENTS;
+
+        /** A column can specify its vertical alignment to have all its columns vertically centered. */
+        verticalAlign?: SemanticVERTICALALIGNMENTS;
+
+        /** A column can specify a width for a wide screen device. */
+        widescreen?: number | SemanticWIDTHSSTRING | number;
+
+        /** Represents width of column. */
+        width?: SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number;
+    }
+
+    export const GridColumn: React.ComponentClass<GridColumnProps>
+
+    interface GridRowProps {
+
+        /** An element type to render as (string or function). */
+        as?: any;
+
+        /** A row can have its columns centered. */
+        centered?: boolean;
+
+        /** Primary content. */
+        children?: React.ReactNode;
+
+        /** Additional classes. */
+        className?: string;
+
+        /** A grid row can be colored. */
+        color?: SemanticCOLORS;
+
+        /** Represents column count per line in Row. */
+        columns?: SemanticWIDTHSNUMBER | SemanticWIDTHSSTRING | number | 'equal';
+
+        /** A row can have dividers between its columns. */
+        divided?: boolean;
+
+        /** A row can appear only for a specific device, or screen sizes. */
+        only?: GridPropOnly;
+
+        /** A  row can specify that its columns should reverse order at different device sizes. */
+        reversed?: GridPropReversed;
+
+        /** An can stretch its contents to take up the entire column height. */
+        stretched?: boolean;
+
+        /** A row can specify its text alignment. */
+        textAlign?: SemanticTEXTALIGNMENTS;
+
+        /** A row can specify its vertical alignment to have all its columns vertically centered. */
+        verticalAlign?: SemanticVERTICALALIGNMENTS;
+    }
+
+    export const GridRow: React.ComponentClass<GridRowProps>;
+
+    //
+    //
     // Menu (from node_modules/semantic-ui-react/src/collections/Menu/index.d.ts)
     type MenuPropsIcon = 'labeled';
     type MenuPropsTabular = 'right';
@@ -441,6 +690,8 @@ declare module "semantic-ui-react" {
          * @param {object} data - All item props.
          */
         onItemClick?: React.MouseEventHandler<HTMLDivElement>;
+        /**  */
+        onClick?: SemanticFormOnClick;
         /** A pagination menu is specially formatted to present links to pages of content. */
         pagination?: boolean;
         /** A menu can point to show its relationship to nearby content. */
@@ -482,7 +733,7 @@ declare module "semantic-ui-react" {
 
     const MenuHeader: React.ComponentClass<MenuHeaderProps>;
 
-    interface MenuItemProps extends ReactMouseEvents<HTMLElement> {
+    interface MenuItemProps {
         /** A menu item can be active. */
         active?: boolean;
         /** An element type to render as (string or function). */
@@ -509,6 +760,10 @@ declare module "semantic-ui-react" {
         name?: string;
         /** A menu item can take right position. */
         position?: 'right';
+        /** A augmented Menu Item can use the to prop to redirect Links */
+        to?: string;
+        /**  */
+        onClick?: SemanticFormOnClick;
     }
 
     const MenuItem: React.ComponentClass<MenuItemProps>;
