@@ -1,17 +1,22 @@
 import * as React from 'react'
-import { Container, Segment, Grid, Menu } from 'semantic-ui-react'
+import { Container, Grid, Menu } from 'semantic-ui-react'
 
-interface IContentProps {
+import { IAppStoreProps } from '../stores/appStore'
+import { Overview } from './Overview'
+import { Coding } from './Coding'
+
+export interface IMainProps extends IAppStoreProps {
 }
 
-interface IContentState {
+interface IMainState {
+  activeItem: string
 }
 
-export class Main extends React.Component<IContentProps, IContentState> {
-    state = { activeItem : 'Overview'}
+export class Main extends React.Component<IMainProps, IMainState> {
 
-    constructor(props: IContentProps) {
-        super(props);
+    constructor(props: IMainProps) {
+        super(props)
+        this.state = {activeItem: 'Overview'}
         this.handleItemClick = this.handleItemClick.bind(this)
     }
 
@@ -22,7 +27,7 @@ export class Main extends React.Component<IContentProps, IContentState> {
 
     public render() {
         const mainStyle = {
-            height: '300px',
+            height: '450px',
             background: 'lightsteelblue',
             margin: '50px 0px 50px 0px'
         }
@@ -43,9 +48,14 @@ export class Main extends React.Component<IContentProps, IContentState> {
                   </Grid.Column>
 
                   <Grid.Column stretched width={12}>
-                    <Segment>
-                      This is content.
-                    </Segment>
+                    <Overview store={this.props.store} active={activeItem}/>
+                    <Coding store={this.props.store} active={activeItem}/>
+                    <div hidden={activeItem != 'Features'}>
+                      This content matches the tab: Features.
+                    </div>
+                    <div hidden={activeItem != 'Disagreement'}>
+                      This content matches the tab: Disagreement.
+                    </div>
                   </Grid.Column>
                 </Grid>
               </div>
