@@ -27,6 +27,7 @@ export default class App extends Component<IAppProps, IAppState> {
             <div>
               <Header store={storeInstance} />
               <Main store={storeInstance} children={this.props.children} />
+              <Main store={storeInstance}/>
               <Footer store={storeInstance} />
             </div>
         );

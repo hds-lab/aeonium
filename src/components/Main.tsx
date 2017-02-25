@@ -29,6 +29,7 @@ export class Main extends React.Component<IMainProps, IMainState> {
       height: '450px',
       background: 'lightsteelblue',
       margin: '50px 0px 50px 0px'
+
     }
 
     const { activeItem } = this.state
