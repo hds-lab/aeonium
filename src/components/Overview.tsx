@@ -43,7 +43,7 @@ export default class Overview extends React.Component<IOverviewProps, IOverviewS
         );
 
         return (
-            <div hidden={this.props.active != 'Overview'}>
+            <div>
                 <header>Aeonium Overview</header>
                 <div>
                     <span style={countStyle}>{count}</span>
