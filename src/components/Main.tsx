@@ -20,8 +20,9 @@ export class Main extends React.Component<IMainProps, IMainState> {
   }
 
   private _handleItemClick = (e, {name}) => {
-    console.log(e);
-    this.setState({ activeItem: name });
+    console.log(e)
+    console.log("handle click")
+    this.setState({ activeItem: name })
   }
 
   public render() {
@@ -29,7 +30,6 @@ export class Main extends React.Component<IMainProps, IMainState> {
       height: '450px',
       background: 'lightsteelblue',
       margin: '50px 0px 50px 0px'
-
     }
 
     const { activeItem } = this.state
