@@ -14,14 +14,13 @@ interface IMainState {
 export class Main extends React.Component<IMainProps, IMainState> {
 
   constructor(props: IMainProps) {
-    super(props);
-    this.state = { activeItem: 'Overview' };
-    this._handleItemClick = this._handleItemClick.bind(this);
+    super(props)
+    this.state = { activeItem: 'Overview' }
+    this._handleItemClick = this._handleItemClick.bind(this)
   }
 
   private _handleItemClick = (e, {name}) => {
     console.log(e)
-    console.log("handle click")
     this.setState({ activeItem: name })
   }
 

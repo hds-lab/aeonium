@@ -14,7 +14,7 @@ interface ICodingState {
 export default class Coding extends React.Component<ICodingProps, ICodingState> {
     public render() {
         return (
-            <div hidden={this.props.active != 'Coding'}>
+            <div>
                 <Grid celled='internally'>
                 <Grid.Row>
                     <Grid.Column width={10}>
