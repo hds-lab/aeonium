@@ -26,7 +26,7 @@ export class Main extends React.Component<IMainProps, IMainState> {
 
   public render() {
     const mainStyle = {
-      height: '450px',
+      height: 'auto',
       background: 'lightsteelblue',
       margin: '50px 0px 50px 0px'
     }
@@ -36,8 +36,8 @@ export class Main extends React.Component<IMainProps, IMainState> {
     return (
       <Container>
         <div style={mainStyle}>
-          <Grid>
-            <Grid.Column width={4}>
+          <Grid columns={2}>
+            <Grid.Column width={3}>
               <Menu fluid vertical tabular>
                 <Menu.Item name='Overview' active={activeItem === 'Overview'} as={Link} to='/' onClick={this._handleItemClick} />
                 <Menu.Item name='Coding' active={activeItem === 'Coding'} as={Link} to='/coding' onClick={this._handleItemClick} />
@@ -45,7 +45,6 @@ export class Main extends React.Component<IMainProps, IMainState> {
                 <Menu.Item name='Ambiguity' active={activeItem === 'Ambiguity'} as={Link} to='/ambiguity' onClick={this._handleItemClick} />
               </Menu>
             </Grid.Column>
-
             <Grid.Column stretched width={12}>
               <Segment>
                 {React.Children.map(this.props.children, (child: React.ReactElement<any>) => React.cloneElement(child, { store: this.props.store }))}
