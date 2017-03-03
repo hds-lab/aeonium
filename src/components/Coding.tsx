@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Segment, Grid, Menu, Button, Header, Checkbox, Input } from 'semantic-ui-react'
+import { Segment, Grid, Menu, Button, Header, Checkbox, Input, Label } from 'semantic-ui-react'
 import { IAppStoreProps } from '../stores/appStore'
 
 export interface ICodingProps extends IAppStoreProps {
@@ -72,15 +72,20 @@ export default class Coding extends React.Component<ICodingProps, ICodingState> 
                         </div>
                         <Header as='h4'>COMMENTS</Header>
                         <Input />
-                        <Grid.Row>
-                            <Grid.Column stretched width={12}>
-                                <label>user_123</label>
-                                <label>10/28/16 3:25pm</label>
-                            </Grid.Column>
-                            <Grid.Column>
-                                <label>blah blah lorem ipsum lorem ipsum</label>
-                            </Grid.Column>
-                        </Grid.Row> 
+                        <Grid divided='vertically'>
+                            <Grid.Row columns={3}>
+                                <Grid.Column width={3}>
+                                    <Label basic={true}>user_123</Label> <br/>
+                                    <span style={{fontSize: 8}}>10/28/16 3:25pm</span>
+                                </Grid.Column>
+                                <Grid.Column width={7}>
+                                    <label>blah blah lorem ipsum lorem ipsum</label>
+                                </Grid.Column>
+                                <Grid.Column>
+                                    <Button size='mini'>edit</Button>
+                                </Grid.Column>
+                            </Grid.Row> 
+                        </Grid>
                         
                     </Grid.Column>
 
