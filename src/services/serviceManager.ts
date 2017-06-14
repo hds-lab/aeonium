@@ -11,4 +11,7 @@ export class ServiceManager {
   public getPartners() {
     return this.service.get('/api/partners/', {withCredentials: true});
   }
-} 
+  public getMessageCodes(message_id) {
+    return this.service.get('/api/message_codes/' + message_id, {withCredentials: true});
+  }
+}

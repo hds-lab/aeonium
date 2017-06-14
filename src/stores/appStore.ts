@@ -1,5 +1,6 @@
 import {observable, computed, action} from 'mobx';
 import { PartnerStore } from './partnerStore';
+import { MessageCodesStore } from './messageCodesStore';
 import {ServiceManager} from '../services/serviceManager'
 
 export class AppStore {
@@ -7,9 +8,11 @@ export class AppStore {
     this.count = initialValue;
 
     this.partnerStore = new PartnerStore(new ServiceManager(baseUrl));
+    this.messageCodesStore = new MessageCodesStore(new ServiceManager(baseUrl));
   }
 
   public partnerStore: PartnerStore;
+  public messageCodesStore: MessageCodesStore;
 
   @observable
   public count: number;

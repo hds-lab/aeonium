@@ -1783,6 +1783,10 @@ hawk@~3.1.3:
     hoek "2.x.x"
     sntp "1.x.x"
 
+highcharts@^5.0.11:
+  version v5.0.11
+  resolved "https://registry.yarnpkg.com/highcharts/-/highcharts-5.0.11.tgz#c8e7ebe4cb584ea99d113f7fc7925b2b90398453"
+
 history@^3.0.0:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/history/-/history-3.2.1.tgz#71c7497f4e6090363d19a6713bb52a1bfcdd99aa"

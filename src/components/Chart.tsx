@@ -23,15 +23,15 @@ export class Chart extends React.Component<IContentProps, IContentState> {
     }
 
     private _makeChart() {
-        const { partners } = this.props.store.partnerStore 
-        const d3data = { 
-            width: window.screen.availWidth, 
+        const { partners } = this.props.store.partnerStore
+        const d3data = {
+            width: window.screen.availWidth,
             height: window.screen.availHeight,
             data: partners.map((partner) => {
                 return partner.username;
             })
         }
- 
+
         const svgElement = new ReactFauxDom.Element('svg')
 
         const svg = d3.select(svgElement)
@@ -61,7 +61,7 @@ export class Chart extends React.Component<IContentProps, IContentState> {
         return svgElement.toReact()
     }
 
-    public render() {    
-        return this._makeChart() 
+    public render() {
+        return this._makeChart()
     }
 };
